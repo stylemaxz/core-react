@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Form from './Form'
+import Contacts from './Contacts'
 
 class App extends Component {
   state = {
@@ -12,29 +12,11 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h2>Address Form</h2>
-        <form> 
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input type="text" className="form-control" id="name" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="address">Address</label>
-            <input type="text" className="form-control" id="address" />
-          </div>
-          <button type="submit" class="btn btn-primary">Create</button>
-        </form>
+        <Form/>
         <hr/>
-        <ul>
-          {
-            this.state.contacts.map(
-              (contact, index) =>
-              <li key={index}>{contact.name} - {contact.address}</li>
-            )
-          }
-        </ul>
+        <Contacts {...this.state}/>
       </div>
-    );
+    )
   }
 }
 
