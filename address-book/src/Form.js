@@ -6,18 +6,23 @@ class FormComponent extends Component {
         address: ''
     }
 
-    createContact = e => {
+    handleSubmit = e => {
         e.preventDefault()
         const { name, address } = this.state
-        this.props.createContact({
+        this.props.onSubmit({
             name,
             address
         })
+        this.clearForm()
     }
 
     changeState = state => e => (
         this.setState({ [state]: e.target.value })
     )
+
+    clearForm = () => {
+        this.setState({ name: '', address: '' })
+    }
 
 
     render() {
@@ -47,7 +52,7 @@ class FormComponent extends Component {
                     <button
                         type="submit"
                         className="btn btn-primary"
-                        onClick={this.createContact}>Create</button>
+                        onClick={this.handleSubmit}>Create</button>
                 </form>
             </div>
         )
