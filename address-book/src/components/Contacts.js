@@ -17,10 +17,10 @@ Contacts.defaultProps = {
 
 Contacts.propTypes = {
     contacts: PropTypes.arrayOf(
-        // PropTypes.shape({
-        //     name: PropTypes.string.isRequired,
-        //     address: PropTypes.string.isRequired
-        // })
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            address: PropTypes.string.isRequired
+        })
     )
 }
 
