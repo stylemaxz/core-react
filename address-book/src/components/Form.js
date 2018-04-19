@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class FormComponent extends Component {
+class Form extends Component {
     state = {
         name: '',
         address: ''
@@ -23,7 +23,6 @@ class FormComponent extends Component {
     clearForm = () => {
         this.setState({ name: '', address: '' })
     }
-
 
     render() {
         const { name, address } = this.state
@@ -59,4 +58,4 @@ class FormComponent extends Component {
     }
 }
 
-export default FormComponent
+export default Form
