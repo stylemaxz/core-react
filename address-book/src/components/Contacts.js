@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Contacts = ({ contacts }) => (
     <ul>
@@ -17,10 +18,10 @@ Contacts.defaultProps = {
 
 Contacts.propTypes = {
     contacts: PropTypes.arrayOf(
-        // PropTypes.shape({
-        //     name: PropTypes.string.isRequired,
-        //     address: PropTypes.string.isRequired
-        // })
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            address: PropTypes.string.isRequired
+        })
     )
 }
 
